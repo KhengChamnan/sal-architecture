@@ -1,66 +1,84 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import ProjectGrid, { Project } from '@/components/ProjectGrid';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import styles from './page.module.css';
+
+const featuredProjects: Project[] = [
+  {
+    id: '1',
+    title: 'Glass House',
+    location: 'California, USA',
+    imageUrl: '/project-1.png',
+    slug: 'glass-house',
+    featured: true,
+  },
+  {
+    id: '2',
+    title: 'Brutalist Tower',
+    location: 'Berlin, Germany',
+    imageUrl: '/project-2.png',
+    slug: 'brutalist-tower',
+  },
+  {
+    id: '3',
+    title: 'Urban Apartments',
+    location: 'Copenhagen, Denmark',
+    imageUrl: '/project-3.png',
+    slug: 'urban-apartments',
+  },
+  {
+    id: '4',
+    title: 'Cultural Center',
+    location: 'Baku, Azerbaijan',
+    imageUrl: '/project-4.png',
+    slug: 'cultural-center',
+    featured: true,
+  },
+  {
+    id: '5',
+    title: 'Glass House II',
+    location: 'California, USA',
+    imageUrl: '/project-1.png',
+    slug: 'glass-house-2',
+  },
+  {
+    id: '6',
+    title: 'Concrete Tower',
+    location: 'Tokyo, Japan',
+    imageUrl: '/project-2.png',
+    slug: 'concrete-tower',
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <>
+      <Header />
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+        {/* Title Section */}
+        <section className={styles.titleSection}>
+          <h1 className={styles.mainTitle}>sal</h1>
+        </section>
+
+        {/* Quote Section */}
+        <section className={styles.quoteSection}>
+          <p className={styles.quoteParagraph}>
+            is an architecture studio with a focus on contemporary residential and commercial design.
           </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <p className={styles.quoteParagraph}>
+            We create spaces that balance minimalist aesthetics with functional living, respecting the environment and local craftsmanship.
+          </p>
+          <p className={styles.quoteParagraph}>
+            Inspired by modern culture, we design timeless architecture for the people who will inhabit these spaces for generations.
+          </p>
+        </section>
+
+        {/* Project Grid */}
+        <section className={styles.projectSection}>
+          <ProjectGrid projects={featuredProjects} />
+        </section>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }

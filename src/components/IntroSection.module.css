@@ -1,0 +1,28 @@
+.intro {
+    padding: var(--space-2xl) var(--space-lg);
+    background: var(--color-white);
+}
+
+.container {
+    max-width: var(--max-width-medium);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-relaxed);
+    font-weight: 300;
+    color: var(--color-black);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .intro {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .text {
+        font-size: var(--font-size-lg);
+    }
+}
